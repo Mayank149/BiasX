@@ -9,38 +9,21 @@
 </head>
 <body>
     <div class="analyzer-container">
-        <!-- Consistent Header -->
-        <header class="header">
-            <a href="/" class="logo"> <!-- Link back to homepage -->
-                <img src="/static/sdg5.png" alt="SDG 5 Logo" class="header-logo">
+        <header>
+            <div class="logo">
+                <img src="/static/logo.png" alt="BiasX Logo">
                 <h1>BiasX Analyzer</h1>
-            </a>
+            </div>
+            <a href="/" class="back-button">← Back to Home</a>
         </header>
 
         <!-- Input Section -->
-        <div class="input-section">
-            <label for="text-input">Enter text to analyze:</label>
-            <textarea id="text-input" class="textarea" rows="10" placeholder="Paste or type your text here... Analysis will update automatically as you type."></textarea>
+        <div class="text-input-section">
+            <textarea id="text-input" placeholder="Paste or type your text here... Analysis will update automatically as you type."></textarea>
         </div>
 
-        <!-- Results Section - Uses CSS Grid defined in styles.css -->
+        <!-- Results Section -->
         <div id="results-container" class="analysis-results">
-            <!-- Card for Tone Analysis -->
-            <div class="result-card">
-                <h3>Tone Analysis</h3>
-                <div id="tone-result">
-                    <p>Results will appear here as you type.</p>
-                </div>
-            </div>
-
-            <!-- Card for Gender-Coded Language -->
-            <div class="result-card">
-                <h3>Gender-Coded Language</h3>
-                <div id="gender-result">
-                    <!-- JS will populate this -->
-                </div>
-            </div>
-
             <!-- Card for Professional Titles -->
             <div class="result-card">
                 <h3>Professional Titles</h3>
@@ -53,6 +36,22 @@
             <div class="result-card">
                 <h3>Inclusive Pronouns/Relationships</h3>
                 <div id="inclusive-result">
+                    <!-- JS will populate this -->
+                </div>
+            </div>
+
+            <!-- Card for Tone Analysis -->
+            <div class="result-card">
+                <h3>Tone Analysis</h3>
+                <div id="tone-result">
+                    <p>Results will appear here as you type.</p>
+                </div>
+            </div>
+
+            <!-- Card for Gender-Coded Language -->
+            <div class="result-card">
+                <h3>Gender-Coded Language</h3>
+                <div id="gender-result">
                     <!-- JS will populate this -->
                 </div>
             </div>
