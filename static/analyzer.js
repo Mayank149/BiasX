@@ -146,34 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
     cards.forEach(card => {
         // Add click-to-expand functionality
         card.addEventListener('click', () => {
-            const content = card.querySelector('div[id$="-result"]');
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                card.style.transform = '';
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                card.style.transform = 'scale(1.02) translateY(-10px)';
-            }
-        });
-
-        // Add tilt effect on mouse move
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            // Toggle expanded state
+            card.classList.toggle('expanded');
             
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const angleX = (y - centerY) / 20;
-            const angleY = (centerX - x) / 20;
-            
-            card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.02)`;
-        });
-
-        // Reset tilt on mouse leave
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
+            // Collapse other cards
+            cards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('expanded')) {
+                    otherCard.classList.remove('expanded');
+                }
+            });
         });
     });
 });
